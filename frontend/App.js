@@ -1,15 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
-
-
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function App() {
 
   /*
-  
   Fonts 
-  
    */
   const [loaded] = useFonts({
     Montserrat: require('./assets/fonts/Montserrat.ttf'),
@@ -19,7 +16,6 @@ export default function App() {
     Shrikhand: require('./assets/fonts/Shrikhand-Regular.ttf'),
     ScopeOneReg: require('./assets/fonts/Shrikhand-Regular.ttf'),
   });
-
     if (!loaded) {
     return null;
   }
@@ -29,7 +25,29 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{ fontFamily: 'SansitaBlack', fontSize: 44 }}>Vad händer</Text>
+      <Text style={[styles.standard, styles.container]}>Vad händer</Text>
     </View>
   );
 }
+
+
+//  <Text style={ [styles.red, styles.bigBlue] }
+
+const styles = StyleSheet.create({
+  standard:{
+   fontFamily: 'SansitaBlack', 
+   fontSize: 44,
+   color: 'red'
+  },
+  container: {
+    marginTop: 50,
+  },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});

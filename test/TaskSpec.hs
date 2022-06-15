@@ -4,7 +4,6 @@ module TaskSpec
   ) where
 
 import           Import
-import           Task
 import           Test.Hspec
 import           Test.Hspec.QuickCheck
 
@@ -12,7 +11,6 @@ spec :: Spec
 spec =  describe "Tasks" $ do prop "noprop" True
 
 {-
-
 spec :: Spec
 spec = do
   describe "Tasks" $ do
